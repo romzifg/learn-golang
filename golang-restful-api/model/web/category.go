@@ -1,7 +1,7 @@
 package web
 
 type CategoryCreateRequest struct {
-	Name string
+	Name string `validate:"required, max=200, min=3"`
 }
 
 type CategoryResponse struct {
@@ -10,6 +10,6 @@ type CategoryResponse struct {
 }
 
 type CategoryUpdateRequest struct {
-	Id   int
-	Name string
+	Id   int    `validate:"required"`
+	Name string `validate:"required, max=200, min=3"`
 }
